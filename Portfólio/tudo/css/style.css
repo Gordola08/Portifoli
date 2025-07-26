@@ -1,0 +1,534 @@
+/* ---------- HTML ---------- */
+
+html {
+    scrollbar-gutter: stable;
+}
+
+/* ---------- GERAL ---------- */
+body {
+    background: linear-gradient(to bottom, rgba(14, 0, 28, 0.9), #0d0d0d);
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ---------- NAVBAR ---------- */
+.custom-navbar {
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(10px);
+    padding: 0.8rem 0;
+    box-shadow: none;
+    z-index: 1000;
+    animation: slideDown 1s ease-out;
+}
+
+.custom-navbar .navbar-nav .nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;
+    animation: fadeInLinks 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+    transition: color 0.3s ease;
+}
+
+.custom-navbar .navbar-nav .nav-link:hover {
+    color: #ff5733;
+    transform: scale(1.1);
+}
+
+/* ---------- ANIMAÇÕES ---------- */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLinks {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ---------- LOGO ---------- */
+.logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #4a00e0;
+    padding: 1px;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* altura total da tela */
+    padding: 20px;
+    background: linear-gradient(to bottom, rgba(14, 0, 28, 0.9), #0d0d0d);
+    text-align: center;
+}
+
+.hero h1,
+.hero p {
+    white-space: nowrap;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+.hero h1 {
+    font-size: 4vw;
+    animation: typing 3.5s steps(30) 1s forwards, blink 0.75s step-end infinite;
+}
+
+.hero p {
+    font-size: 2vw;
+    animation: typing 5s steps(40) 1s forwards, blink 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* ---------- scrollbar ---------- */
+
+/* Barra de rolagem toda */
+::-webkit-scrollbar {
+    width: 12px;
+    /* largura da barra */
+}
+
+/* Fundo da barra */
+::-webkit-scrollbar-track {
+    background: #222;
+    /* cor do fundo da barra */
+}
+
+/* A "thumb" - a parte que você arrasta */
+::-webkit-scrollbar-thumb {
+    background-color: #00129e;
+    /* cor da barra de rolagem */
+    border-radius: 20px;
+    /* arredondar a barra */
+    border: 3px solid #222;
+    /* uma borda para separar da track */
+}
+
+/* Thumb ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #00129e;
+}
+
+.scroll-container {
+  position: relative;
+  height: 400px; /* ou a altura que quiser */
+  overflow: hidden;
+}
+
+.scroll-content {
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 20px; /* espaço para a barra custom */
+  box-sizing: content-box;
+}
+
+.scrollbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 100%;
+  background: #222;
+  border-radius: 10px;
+}
+
+.thumb {
+  width: 100%;
+  background-color: #00129e;
+  border-radius: 10px;
+  position: relative;
+  top: 0;
+  height: 50px; /* será atualizado pelo JS */
+}
+
+/* ---------- BOTÃO ROXO ---------- */
+.btn-roxo {
+    background-color: #8e2de2;
+    color: #fff;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border: none;
+    transition: 0.3s;
+}
+
+.btn-roxo:hover {
+    background-color: #4a00e0;
+    transform: scale(1.05);
+}
+
+/* ---------- HABILIDADES ---------- */
+.habilidades-3d-wrapper {
+    perspective: 1000px;
+}
+
+.habilidades-3d {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+.habilidade {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.habilidade:hover i {
+    transform: scale(1.2);
+}
+
+.habilidade i {
+    font-size: 4rem;
+    transition: transform 0.3s ease;
+}
+
+.habilidade h4 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+/* ---------- PROJETOS 3D ---------- */
+.projetos-3d-wrapper {
+    perspective: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.projetos-3d {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1000px;
+}
+
+.pagina {
+    position: relative;
+    width: 350px;
+    height: 450px;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+}
+
+.pagina:hover {
+    transform: rotateY(180deg);
+}
+
+.livro {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.folha {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.folha.esquerda {
+    background-color: #f0f0f0;
+}
+
+.folha.esquerda img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.folha.direita {
+    background-color: #fff;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* ---------- CONTATO ---------- */
+#contato p {
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+/* ---------- SOCIAL ICONS ---------- */
+.social-icons a {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+    color: #a855f7;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 6vw;
+    }
+
+    .hero p {
+        font-size: 3.5vw;
+    }
+
+    .pagina {
+        width: 90%;
+        height: auto;
+    }
+
+    .folha {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .folha.esquerda,
+    .folha.direita {
+        padding: 10px;
+    }
+
+    .folha.esquerda img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Estilo base do modal */
+.modal-content {
+    background: #0d0d0d;
+    color: #00129e;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 18, 158, 0.667);
+    border: none;
+}
+
+/* Header do modal */
+.modal-header {
+    padding: 1rem 1.5rem;
+    color: #00129e;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px rgba(0, 18, 158, 0.1);
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    border-top: 2px solid #0d0d0d;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.modal-header .btn-close:hover {
+    opacity: 1;
+}
+
+/* Corpo do modal */
+.modal-body {
+    padding: 1.5rem;
+    border-top: 2px solid #000000;
+    font-size: 1.1rem;
+    color: #e0e7ff;
+}
+
+.modal-body img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+
+    animation: bounce 2s ease-in-out infinite;
+}
+
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Rodapé do modal */
+.modal-footer {
+    border-top: 2px solid #0d0d0d;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* Botões do modal */
+.modal-footer .btn {
+    min-width: 120px;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 18, 158, 0.4);
+}
+
+.btn-primary {
+    background-color: #0040ff;
+    border: none;
+    color: #f0f0f0;
+}
+
+.btn-primary:hover {
+    background-color: #3366ff;
+    box-shadow: 0 6px 18px rgba(51, 102, 255, 0.7);
+}
+
+.btn-danger {
+    background-color: #0030cc;
+    border: none;
+    color: #f0f0f0;
+}
+
+.btn-danger:hover {
+    background-color: #0055ff;
+    box-shadow: 0 6px 18px rgba(0, 85, 255, 0.7);
+}
+
+.btn-success {
+    background-color: #0066cc;
+    border: none;
+    color: #f0f0f0;
+}
+
+.btn-success:hover {
+    background-color: #3399ff;
+    box-shadow: 0 6px 18px rgba(51, 153, 255, 0.7);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid #cce0ff;
+    color: #cce0ff;
+}
+
+.btn-secondary:hover {
+    background-color: #002d99;
+    color: #ffffff;
+    border-color: #6699ff;
+    box-shadow: 0 4px 12px rgba(102, 153, 255, 0.7);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 576px) {
+    .modal-dialog {
+        margin: 1rem;
+        max-width: 95%;
+    }
+
+    .modal-header {
+        font-size: 1.2rem;
+    }
+
+    .modal-body {
+        font-size: 1rem;
+    }
+
+    .modal-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .modal-footer .btn {
+        width: 100%;
+    }
+}
