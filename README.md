@@ -1,2 +1,5 @@
-# Portifoli
-Portfólio online de João, desenvolvedor web focado em criar sites modernos, responsivos e funcionais. Apresenta projetos, habilidades e contato em uma interface simples e elegante, perfeita para mostrar seu trabalho com profissionalismo.
+# Portfólio João
+
+Este é o portfólio online de João, um desenvolvedor web dedicado a criar experiências digitais modernas e funcionais. O site apresenta projetos, habilidades e informações de contato, tudo organizado em uma interface limpa e responsiva, ideal para apresentar seu trabalho profissionalmente.
+
+Confira o site aqui: [joao-portifoli.netlify.app](https://joao-portifoli.netlify.app/)
